@@ -1,0 +1,16 @@
+apiVersion: tt.function.com/v1alpha1
+kind: Function
+metadata:
+  name: hello-world
+  region: beijing
+  provider: aws
+spec:
+  runtime: python
+  handler: hello-world.hello
+  env:
+    - name: FOO
+      value: bar
+  source:
+    git:
+      url: https://github.com/tt-funktion/hello-world.git
+      revision: master
